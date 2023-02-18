@@ -15,6 +15,16 @@ public class InsertPosition {
      * @return return the index that a number should be inserted into a sorted array.
      */
     public int searchInsert(int[] nums, int target) {
-        return -1;
+        //this seems like the best solution without adding extra operations like using a temp array with length nums+1
+        //i guess its possible to do some sort of binary search to more quickly find the insertion point..
+        //ill have to come back to this problem
+        int tracking = -1;
+        for(int j=0; j<nums.length; j++) {
+            if(target<nums[j]) {
+                tracking = j;
+                break;
+            }
+        }
+        return tracking==-1 ? nums.length : tracking;
     }
 }
